@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul class="menu">
+               <li> <a href="./index_2.html"><img src="images/logo2.PNG"width="50px"height="60px" alt="welcome to Tajam"></a></li>
+                <li><a href="#베스트">브랜드관</a></li>
+                <li><a href="#할인">1팩담기</a></li>
+                <li><a href="#이벤트">이벤트</a></li>
+                <li><a href="#리뷰">리뷰</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul class="auth-menu">
+                <li><a href="./mypage.html">마이페이지</a></li>
+                <li><a href="./cart.html">장바구니</a></li>
+                <li><a href="./index.html">로그아웃</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="cart">
+        <h2>장바구니</h2>
+        <ul class="cart-list"></ul>
+        <div id="total-price"></div>
+        <div class="shipping-info">
+            <h3>배송 정보</h3>
+            <label for="shipping-name">이름:</label>
+            <input type="text" id="shipping-name" required><br>
+            <label for="shipping-address">주소:</label>
+            <input type="text" id="shipping-address" required><br>
+            <label for="shipping-phone">전화번호:</label>
+            <input type="text" id="shipping-phone" required><br>
+        </div>
+        <button  id="checkout-btn">결제하기</button>
+    </div>
+    <script src="./js/cart.js"></script>
+</body>
+</html>

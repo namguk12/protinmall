@@ -1,0 +1,156 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+#rank_nav {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  
+}
+
+main {
+  padding: 2em;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  gap: 1em;
+}
+
+.product-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.product-price {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.product-actions button {
+  padding: 0.5em;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-actions .wishlist-btn {
+  color: #ff6347;
+}
+
+.product-actions .cart-btn {
+  color: #007bff;
+}
+
+.product-actions button:hover {
+  opacity: 0.8;
+}
+
+.star-rating {
+  display: flex;
+  direction: row-reverse;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.star-rating i {
+  color: #ddd;
+  transition: color 0.2s;
+}
+
+.star-rating i.fas {
+  color: #ffc107;
+}
+.nav-left, .nav-right {
+  display: flex;
+  font-size: medium;
+}
+
+
+.menu, .auth-menu {
+  
+  list-style: none;
+  padding:0;
+  margin: 0;
+  display: flex;
+  
+}
+
+.menu li, .auth-menu li {
+  margin: 0 15px;
+}
+
+.menu a{
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px 0px 20px;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+.auth-menu a {
+  width: 70px;
+  height: 90px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.menu a:hover, .auth-menu a:hover {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
