@@ -1,16 +1,16 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function() {
     const products = [
-        { name: "제품 1", price: "₩10,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 2", price: "₩20,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 3", price: "₩30,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 4", price: "₩40,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 5", price: "₩50,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 6", price: "₩60,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 7", price: "₩70,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 8", price: "₩80,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 9", price: "₩90,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 10", price: "₩100,000", image: "https://via.placeholder.com/100" },
+        { name: "닭가슴살 스테이크", price: "₩10,000", image: "./images/chi_1.jpg" },
+        { name: "스팀 닭가슴살", price: "₩13,000", image: "./images/chi_2.jpg" },
+        { name: "소프트 닭가슴살", price: "₩12,000", image: "./images/chi_3.jpg" },
+        { name: "저염 닭가슴살", price: "₩9,000", image: "./images/chi_4.jpg" },
+        { name: "한입 닭가슴살", price: "₩12,000", image: "./images/chi_5.jpg" },
+        { name: "오븐구이 닭가슴살", price: "₩12,000", image: "./images/chi_6.jpg" },
+        { name: "오븐구이 닭가슴살", price: "₩12,500", image: "./images/chi_7.jpg" },
+        { name: "오븐구이 혼합 닭가슴살", price: "₩10,000", image: "./images/chi_8.jpg" },
+        { name: "소스 통 닭가슴살", price: "₩20,000", image: "./images/chi_9.jpg" },
+        { name: "저당 소스 닭가슴살", price: "₩14,000", image: "./images/chi_10.jpg" },
     ];
   
     const productList = document.querySelector(".product-list");
