@@ -1,24 +1,28 @@
-// script.js
+// DOMContentLoaded 이벤트 리스너를 추가하여 HTML 문서가 완전히 로드되고 파싱된 후 실행되는 함수를 정의합니다.
 document.addEventListener("DOMContentLoaded", function() {
+    // 제품 목록을 배열로 정의합니다.
     const products = [
-        { name: "제품 1", price: "₩10,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 2", price: "₩20,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 3", price: "₩30,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 4", price: "₩40,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 5", price: "₩50,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 6", price: "₩60,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 7", price: "₩70,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 8", price: "₩80,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 9", price: "₩90,000", image: "https://via.placeholder.com/100" },
-        { name: "제품 10", price: "₩100,000", image: "https://via.placeholder.com/100" },
+        { name: "마늘맛 닭가슴살", price: "₩2,000", image: "./images/rank_1.jpg" },
+        { name: "크리스피 닭가슴살", price: "₩2,000", image: "./images/rank_2.jpg" },
+        { name: "한끼 통살 닭가슴살", price: "₩2,500", image: "./images/rank_3.jpg" },
+        { name: "스팀 닭가슴살", price: "₩2,000", image: "./images/rank_4.jpg" },
+        { name: "닭가슴살 볶음밥", price: "₩3,000", image: "./images/rank_5.jpg" },
+        { name: "닭가슴살 소시지", price: "₩3,000", image: "./images/rank_6.jpg" },
+        { name: "닭고기 닭가슴살", price: "₩2,800", image: "./images/rank_7.jpg" },
+        { name: "소스 닭가슴살", price: "₩3,200", image: "./images/rank_8.jpg" },
+        { name: "닭가슴살 주먹밥", price: "₩2,700", image: "./images/rank_9.jpg" },
+        { name: "닭가슴살 볶음밥", price: "₩2,800", image: "./images/rank_10.jpg" },
     ];
   
+    // .product-list 클래스를 가진 HTML 요소를 선택합니다.
     const productList = document.querySelector(".product-list");
   
+    // 각 제품을 순회하면서 제품 항목을 생성하고 product-list 요소에 추가합니다.
     products.forEach((product, index) => {
-        const productItem = document.createElement("div");
-        productItem.className = "product-item";
+        const productItem = document.createElement("div"); // div 요소 생성
+        productItem.className = "product-item"; // 클래스 이름 설정
   
+        // 제품 항목의 내부 HTML을 설정
         productItem.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <div class="product-details">
@@ -38,43 +42,46 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `;
   
+        // product-list 요소에 생성된 제품 항목을 추가합니다.
         productList.appendChild(productItem);
     });
   
-    // 하트 아이콘 클릭 이벤트 추가
+    // product-list 요소에 클릭 이벤트 리스너를 추가합니다.
     productList.addEventListener('click', function(e) {
+        // 위시리스트 버튼(하트 아이콘)이 클릭된 경우
         if (e.target.classList.contains('wishlist-btn') || e.target.closest('.wishlist-btn')) {
-            const button = e.target.closest('.wishlist-btn');
-            const icon = button.querySelector('i');
+            const button = e.target.closest('.wishlist-btn'); // 버튼 요소 찾기
+            const icon = button.querySelector('i'); // 아이콘 요소 찾기
             if (icon.classList.contains('far')) {
-                icon.classList.remove('far');
+                icon.classList.remove('far'); // 빈 하트 -> 채워진 하트
                 icon.classList.add('fas');
             } else {
-                icon.classList.remove('fas');
+                icon.classList.remove('fas'); // 채워진 하트 -> 빈 하트
                 icon.classList.add('far');
             }
         }
   
-        // 별점 아이콘 클릭 이벤트 추가
+        // 별점 아이콘이 클릭된 경우
         if (e.target.classList.contains('fa-star')) {
-            const rating = e.target.getAttribute('data-rating');
-            const stars = e.target.parentNode.querySelectorAll('i');
+            const rating = e.target.getAttribute('data-rating'); // 클릭된 별점의 데이터 속성 가져오기
+            const stars = e.target.parentNode.querySelectorAll('i'); // 모든 별점 아이콘 찾기
             stars.forEach(star => {
-                star.classList.remove('fas');
+                star.classList.remove('fas'); // 모든 별점 아이콘 초기화 (빈 별)
                 star.classList.add('far');
             });
             for (let i = 0; i < rating; i++) {
-                stars[i].classList.add('fas');
+                stars[i].classList.add('fas'); // 클릭된 별점까지 채워진 별로 변경
                 stars[i].classList.remove('far');
             }
         }
   
-        // 장바구니 버튼 클릭 이벤트 추가
+        // 장바구니 버튼이 클릭된 경우
         if (e.target.closest('.cart-btn')) {
-            const button = e.target.closest('.cart-btn');
-            const itemName = button.getAttribute('data-name');
-            const itemPrice = button.getAttribute('data-price');
-            const item = { name: itemName, price: itemPrice };
+            const button = e.target.closest('.cart-btn'); // 버튼 요소 찾기
+            const itemName = button.getAttribute('data-name'); // 데이터 속성에서 제품 이름 가져오기
+            const itemPrice = button.getAttribute('data-price'); // 데이터 속성에서 제품 가격 가져오기
+            const item = { name: itemName, price: itemPrice }; // 제품 객체 생성
+            // cart.html 페이지로 이동하며 제품 정보를 URL 파라미터로 전달
             window.location.href = `cart.html?name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}`;
         }
     });
@@ -83,22 +90,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const starRatings = document.querySelectorAll('.star-rating i');
     starRatings.forEach(star => {
         star.addEventListener('click', function(e) {
-            const rating = e.target.getAttribute('data-rating');
-            const stars = e.target.parentNode.querySelectorAll('i');
+            const rating = e.target.getAttribute('data-rating'); // 클릭된 별점의 데이터 속성 가져오기
+            const stars = e.target.parentNode.querySelectorAll('i'); // 모든 별점 아이콘 찾기
             let clicked = false;
             stars.forEach(star => {
                 if (!clicked) {
-                    star.classList.remove('far');
+                    star.classList.remove('far'); // 빈 별을 채워진 별로 변경
                     star.classList.add('fas');
                 } else {
-                    star.classList.remove('fas');
+                    star.classList.remove('fas'); // 채워진 별을 빈 별로 변경
                     star.classList.add('far');
                 }
                 if (star === e.target) {
-                    clicked = true;
+                    clicked = true; // 클릭된 별 이후부터는 빈 별로 유지
                 }
             });
         });
     });
-  });
-  
+});
